@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "authentication": "^0.0.4",
+    "authorization": "^1.0.9",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.9",
+    "uuidv4": "^6.2.8"
+  },
+  "name": "meraki_academy_project_3",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmadAlAraj06/MERAKI_Academy_Project_3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhmadAlAraj06/MERAKI_Academy_Project_3/issues"
+  },
+  "homepage": "https://github.com/AhmadAlAraj06/MERAKI_Academy_Project_3#readme",
+  "devDependencies": {},
+  "description": ""
+}
