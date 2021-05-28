@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './../App.css';
-// import axios from "axios";
+import axios from "axios";
+
 
 
  const Register =(props) =>{
@@ -10,6 +11,21 @@ import './../App.css';
    const[country,setCountry]=useState()
    const[email,setEmail]=useState()
    const[password,setPassword]=useState()
+
+   const userrs = () => {
+    axios.post(`http://localhost:5000/users`,{firstName,
+    lastName,
+    age,
+    country,
+    email,
+    password,
+  }).then((res) => {
+      console.log(res.data);
+    })
+    .catch((err) =>{
+      console.log(err);
+    })
+     }
 
     return ( <>
     <div className="register">
@@ -28,10 +44,12 @@ import './../App.css';
         <input className="sections" type="password" placeholder={`password here`}  onChange={(a)=>{setPassword(a.target.value)}}/>
         <br/>
 
-              <button className="register_button section">
+
+              <button className="register_button section" onClick={userrs}>
               Register
       </button>
-    </div>
+     
+         </div>
     </>)
 
   }
