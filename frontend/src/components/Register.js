@@ -11,6 +11,7 @@ import axios from "axios";
    const[country,setCountry]=useState()
    const[email,setEmail]=useState()
    const[password,setPassword]=useState()
+   const[massage,setMassage]=useState()
 
    const userrs = () => {
     axios.post(`http://localhost:5000/users`,{firstName,
@@ -21,11 +22,21 @@ import axios from "axios";
     password,
   }).then((res) => {
       console.log(res.data);
+
+      if (res.data._id) {
+        setMassage(
+         `The user has been created successfully`
+        );
+    } else {
+      setMassage(
+            `Error happened while register, please try again`
+        );
+    }
+
     })
     .catch((err) =>{
       console.log(err);
-    })
-     }
+    })}
 
     return ( <>
     <div className="register">
@@ -48,7 +59,7 @@ import axios from "axios";
               <button className="register_button section" onClick={userrs}>
               Register
       </button>
-     
+     {massage}
          </div>
     </>)
 
