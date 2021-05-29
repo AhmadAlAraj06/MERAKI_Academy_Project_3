@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './../App.css';
 import axios from "axios";
-
+// import { Route, useHistory } from "react-router-dom";
 
 
  const Register =(props) =>{
@@ -55,13 +55,15 @@ import axios from "axios";
         <input className="sections" type="password" placeholder={`password here`}  onChange={(a)=>{setPassword(a.target.value)}}/>
         <br/>
 
-
-              <button className="register_button section" onClick={userrs}>
+      
+              <button className="register_button section" onClick={userrs} >
               Register
+              
       </button>
      {massage}
          </div>
     </>)
 
   }
+ 
   export default Register;

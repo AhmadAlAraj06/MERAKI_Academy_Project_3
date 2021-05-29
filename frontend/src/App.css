@@ -12,3 +12,6 @@ border-radius: 5%;
 .sections{
     width: 150px;
 }
+.app{
+    border:5px blue solid;
+}

@@ -1,11 +1,15 @@
 import React,{useState} from 'react';
 import './../App.css';
 import axios from "axios";
+import Dashboard from "./Dashboard";
+import { Route, useHistory } from "react-router-dom";
 
 function Login(){
 const[email,setEmail]=useState()
 const[massage,setMassage]=useState()
 const[password,setPassword]=useState()
+
+const history = useHistory();
 
 const login = ()=>{
     axios.post(`http://localhost:5000/login`,{
@@ -21,19 +25,26 @@ const login = ()=>{
       setMassage(
        `the login successfully`
       );
-  } else{
-    setMassage(
-          `the login failed`
-      );
-   
-    }
+      history.push("/Dashboard");
+  } 
 })
      
         .catch((err) =>{
         // setMassage("The login failed")
-        // console.log("The login failed")
+        console.log(err.response);
           
-        console.log(err);
+        if(err.response.status==404){
+            setMassage(
+                `The email doesn't exist`
+            );
+        }else{
+            setMassage(
+                `The password you've entered is incorrect`
+            );
+        }
+          
+           
+            
           })}
 
 
